@@ -1,8 +1,6 @@
-[Home](../README.md)
+# Blockly test / UI POC for WFB [![Built on Blockly](https://tinyurl.com/built-on-blockly)](https://github.com/google/blockly)
 
-# blockly-react-sample [![Built on Blockly](https://tinyurl.com/built-on-blockly)](https://github.com/google/blockly)
-
-This sample shows how to load Blockly in a [React](https://reactjs.org/) project.
+This test app shows how to load Blockly in a [React](https://reactjs.org/) project and do some modifications to workspace.
 
 ## Running the sample
 

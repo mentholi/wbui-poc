@@ -126,16 +126,10 @@ class App extends React.Component {
     console.log(workspaceToObject());
   };
 
-  createNewWorkflow = () => {
-    console.log("Call api to create new WF");
-  };
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <button onClick={this.createNewWorkflow}>New workflow</button>
-          <button onClick={this.createNewWorkflow}>Load workflow</button>
           <button onClick={this.generateCode}>Convert to code</button>
           <button onClick={this.saveToStorage}>Save to localStorage</button>
           <button onClick={this.loadFromStorage}>Load from localStorage</button>
