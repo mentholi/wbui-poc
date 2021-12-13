@@ -26,7 +26,6 @@
 
 import * as Blockly from "blockly/core";
 import "blockly/javascript";
-window.BlocklyAPI = Blockly;
 
 Blockly.JavaScript["entry_point_block"] = function (block) {
   return "console.log('Starting execution');\n\n";
