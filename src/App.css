@@ -10,9 +10,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-right: 20px;
 }
 
 .App-link {
@@ -26,4 +27,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-workflow-list-item {
+  background-color: #282c34;
+  color: #fff;
+  max-width: 60%;
+  list-style: none;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  /* flex-direction: row; */
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.create-wf input {
+  min-height: 30px;
+  min-width: 300px;
+}
+
+.App-workflow-list-item button {
+  margin: 5px;
+  min-height: 30px;
+}
+
+.App-workflow-list-item span {
+  cursor: pointer;
+}
+
+.App-workflow-list-item button.trash {
+  margin: 5px;
+  margin-left: auto;
+  align-self: flex-end;
+  min-height: 30px;
+  cursor: pointer;
 }
