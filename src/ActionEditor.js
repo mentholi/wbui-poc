@@ -56,6 +56,12 @@ export default class ActionEditor extends React.Component {
     await updateAction(action);
   };
 
+  logXml = () => {
+    const xml = BlocklyAPI.Xml.workspaceToDom(BlocklyAPI.mainWorkspace);
+    const xmlText = BlocklyAPI.Xml.domToPrettyText(xml);
+    console.log(xmlText);
+  };
+
   onBackClick = () => {
     this.props.setWorkflowListView();
   };
@@ -65,6 +71,7 @@ export default class ActionEditor extends React.Component {
       <div>
         <header className="App-header">
           <button onClick={this.save}>Save</button>
+          <button onClick={this.logXml}>Print XML to console</button>
           <button onClick={this.onBackClick}>Back</button>
         </header>
         <BlocklyComponent
@@ -80,8 +87,37 @@ export default class ActionEditor extends React.Component {
           initialXml={this.state.workspaceXml}
         >
           <Category name="Variables" colour="330" custom="VARIABLE"></Category>
-          <Category name="Custom" colour="123">
+          <Category name="Workflow" colour="red">
             <Block type="entry_point_block" />
+          </Category>
+          <Category name="HTTP" colour="123">
+            <Block type="http_request_field">
+              <Value name="url">
+                <Shadow type="text">
+                  <Field name="TEXT">https://</Field>
+                </Shadow>
+              </Value>
+              <Value name="auth_header_name">
+                <Shadow type="text">
+                  <Field name="TEXT">Authorization</Field>
+                </Shadow>
+              </Value>
+              <Value name="auth_header_value">
+                <Shadow type="text">
+                  <Field name="TEXT"></Field>
+                </Shadow>
+              </Value>
+            </Block>
+            <Block type="get_http_response_field" />
+            <Block type="get_http_response_json_field" />
+            <Block type="get_http_status_code_field" />
+          </Category>
+          <Category name="Objects" colour="65">
+            <Block type="dict_create_with" />
+            <Block type="dict_item" />
+            <Block type="get_dict_item" />
+          </Category>
+          <Category name="React test" colour="123">
             <Block type="test_react_field" />
             <Block type="test_react_date_field" />
           </Category>
