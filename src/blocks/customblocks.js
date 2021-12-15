@@ -33,6 +33,7 @@ import "./httpResponse";
 import "./httpResponseJSON";
 import "./httpResponseStatusCode";
 import "./dictFields";
+import "./dictFieldsV2";
 
 // Since we're using json to initialize the field, we'll need to import it.
 import "../fields/BlocklyReactField";

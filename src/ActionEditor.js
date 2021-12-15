@@ -113,9 +113,9 @@ export default class ActionEditor extends React.Component {
             <Block type="get_http_status_code_field" />
           </Category>
           <Category name="Objects" colour="65">
-            <Block type="dict_create_with" />
             <Block type="dict_item" />
             <Block type="get_dict_item" />
+            <Block type="dicts_create_with_v2" />
           </Category>
           <Category name="React test" colour="123">
             <Block type="test_react_field" />
