@@ -313,9 +313,7 @@ export default class ActionEditor extends React.Component {
             </Block>
             <Block type="text_print">
               <Value name="TEXT">
-                <Shadow type="text">
-                  <Field name="TEXT">abc</Field>
-                </Shadow>
+                <Block type="text"></Block>
               </Value>
             </Block>
             <Block type="text_prompt_ext">

@@ -69,25 +69,25 @@ Blockly.Blocks["dicts_create_with_v2"] = {
       this.removeInput("EMPTY");
     }
     var keyNames = [];
-    for (var i = 0; this.getInput("VALUE" + i); i++) {
+    for (let i = 0; this.getInput("VALUE" + i); i++) {
       //this.getInput('VALUE' + i).removeField("KEY"+i);
       keyNames.push(this.getFieldValue("KEY" + i));
       this.removeInput("VALUE" + i);
     }
     // Rebuild block.
-    if (this.itemCount_ == 0) {
+    if (this.itemCount_ === 0) {
       this.appendDummyInput("EMPTY").appendField("Create empty object");
     } else {
       this.appendDummyInput("EMPTY").appendField("Create object");
-      for (var i = 0; i < this.itemCount_; i++) {
-        this.appendValueInput("VALUE" + i)
+      for (let x = 0; x < this.itemCount_; x++) {
+        this.appendValueInput("VALUE" + x)
           .setCheck(null)
           .setAlign(Blockly.ALIGN_RIGHT)
           .appendField(
             new Blockly.FieldTextInput(
-              keyNames.length > i ? keyNames[i] : "Key"
+              keyNames.length > x ? keyNames[x] : "Key"
             ),
-            "KEY" + i
+            "KEY" + x
           )
           .appendField(":");
       }
@@ -130,9 +130,9 @@ Blockly.Blocks["dicts_create_with_v2"] = {
     this.itemCount_ = i;
     this.updateShape_();
     // Reconnect any child blocks.
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (connections[i]) {
-        this.getInput("VALUE" + i).connection.connect(connections[i]);
+    for (let x = 0; x < this.itemCount_; x++) {
+      if (connections[x]) {
+        this.getInput("VALUE" + x).connection.connect(connections[x]);
       }
     }
   },
